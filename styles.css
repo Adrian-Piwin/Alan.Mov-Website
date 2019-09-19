@@ -65,13 +65,26 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.navLoader {
+.nav-loader {
     border: 15px solid black;
     border-radius: 50%;
-    border-color: black black transparent;
+    border-color: black;
+    border-bottom-color: transparent;
     height: calc(100% - 30px);
     width: calc(100% - 30px);
-    animation: navSpin linear 2s infinite 0s;
+}
+
+#load-one {
+    transform: rotate(35deg);
+    animation: navSpinOne linear 2s infinite 0s;
+}
+
+#load-two {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-35deg);
+    animation: navSpinTwo linear 2s infinite 0s;
 }
 
 .navBtn {
@@ -90,9 +103,15 @@ body {
     border-radius: 50%;
 }
 
-@keyframes navSpin{
+@keyframes navSpinOne{
     100%{
-        transform: rotate(360deg);
+        transform: rotate(395deg);
+    }
+}
+
+@keyframes navSpinTwo{
+    100%{
+        transform: rotate(325deg);
     }
 }
 
