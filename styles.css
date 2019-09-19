@@ -1,0 +1,100 @@
+* {
+    outline: 0;
+}
+
+/* ========== Body ========== */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* ========== Header ========== */
+
+#header {
+    padding: 20px 0;
+    background-color: #0a7599;
+    color: white;
+}
+
+#title {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 80px;
+    line-height: 80px;
+}
+
+#subtitle {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+}
+
+/* ========== Page ========== */
+
+#wrap{
+    margin: 10px 5% 0 5%;
+    width: 90%;
+    height: 100%;
+}
+
+#navbar{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 150px;
+    width: 150px;
+    transform: translate(-50%, -50%);
+}
+
+.navLoader {
+    border: 15px solid black;
+    border-radius: 50%;
+    border-color: black black transparent;
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    animation: navSpin linear 2s infinite 0s;
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 70%;
+    width: 70%;
+    padding: 0;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    font-size: 80px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+}
+
+@keyframes navSpin{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
