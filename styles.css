@@ -38,6 +38,7 @@ body {
     font-weight: lighter;
     font-size: 80px;
     line-height: 80px;
+    animation: slideAndFade 1s ease-in-out 0s 1 both;
 }
 
 #subtitle {
@@ -46,6 +47,7 @@ body {
     font-size: 40px;
     line-height: 40px;
     margin-top: 15px;
+    animation: slideAndFade 1s ease-in-out 0.5s 1 both;
 }
 
 /* ========== Page ========== */
@@ -57,37 +59,14 @@ body {
 }
 
 #navbar{
+    display: inline-block;
     position: relative;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    height: 150px;
-    width: 150px;
     transform: translate(-50%, -50%);
 }
 
-.nav-loader {
-    border: 15px solid black;
-    border-radius: 50%;
-    border-color: black;
-    border-bottom-color: transparent;
-    height: calc(100% - 30px);
-    width: calc(100% - 30px);
-}
-
-#load-one {
-    transform: rotate(35deg);
-    animation: navSpinOne linear 2s infinite 0s;
-}
-
-#load-two {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotate(-35deg);
-    animation: navSpinTwo linear 2s infinite 0s;
-}
-
-.navBtn {
+.nav-btn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -98,10 +77,72 @@ body {
 
     text-align: center;
     font-size: 80px;
-    background-color: black;
+    background-color: #0a7599;
     color: white;
     border-radius: 50%;
 }
+
+/* ========== Info ========== */
+
+.nav-opt {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    transition: 0.5s;
+    animation: scaleAndFade 1s ease-in-out 0s 0; /**/
+}
+
+.nav-opt:not(.no-hover):hover {
+    transform: scale(1.2);
+}
+
+.nav-name {
+    position: absolute;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    font-size: 70px;
+    font-weight: lighter;
+    color: #0a7599;
+    opacity: 0;
+    padding-right: 20px;
+}
+
+.nav-loader-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-loader {
+    border: 15px solid #0a7599;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+}
+
+.load-one {
+    transform: rotate(35deg);
+    animation: navSpinOne linear 2s infinite 0s;
+}
+
+.load-two {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-35deg);
+    animation: navSpinTwo linear 2s infinite 0s;
+}
+
+.nav-line{
+    position: absolute;
+    height: 0;
+    left: 50%;
+    transform: translate(-50%,-16px);
+    border-left: 29px solid #0a7599;
+}
+
+/* ========== Animations ========== */
 
 @keyframes navSpinOne{
     100%{
@@ -115,5 +156,48 @@ body {
     }
 }
 
+@keyframes navSpinContainer{
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
+@keyframes drawLine{
+    100% {
+        height: 300px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleAndFade{
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideAndFade{
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 

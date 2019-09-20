@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
     <title>Alan.Mov</title>
@@ -21,9 +22,18 @@
         
         <div id="wrap">
             <div id="navbar">
-                <div class="nav-loader" id="load-one"></div>
-                <div class="nav-loader" id="load-two"></div>
-                <button id="info" class="navBtn">i</button>
+                <div class="nav-opt">
+                    <div class="nav-name">Info</div>
+                    <div class="nav-loader-container" tabindex="0">
+                        <div class="nav-loader load-one"></div>
+                        <div class="nav-loader load-two"></div>
+                    </div>
+                    <button id="info" class="nav-btn">i</button>
+                </div>
+
+                <div class="nav-line"></div>
+
+
             </div>
         </div>
     </div>
